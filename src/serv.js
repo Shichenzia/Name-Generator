@@ -13,8 +13,8 @@ exports.init = async function (args) {
 
   app.route(router => {
     router.get('/', http.handler(logic.helloWorld));
-    router.get('/name_generator', http.handler(logic.nameGenerator));
-    router.get('/nickname_generator', http.handler(logic.nickNameGenerator));
+    router.post('/name_generator', http.handler(logic.nameGenerator));
+    router.post('/nickname_generator', http.handler(logic.nickNameGenerator));
     
   });
 
