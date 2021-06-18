@@ -25,7 +25,7 @@ exports.helloWorld = async function () {
   return "hello world!";
 };
 
-exports.nameGenerator = async function ({ nameNum = 5, nameLength = 2, language = "en", sex }) {
+exports.nameGenerator = async function ({ nameNum = 1, nameLength = 2, language = "zh", sex }) {
   let nameArr = [];
   let firstName, lastName;
 
@@ -36,11 +36,11 @@ exports.nameGenerator = async function ({ nameNum = 5, nameLength = 2, language 
       if(sex === 0) {
         lastName = femaleStr;
       }
-      else if(sex ===1) 
+      else if(sex === 1) 
       {
         lastName = maleStr;
       }else{
-        if(randomAccess(0, 2) ==0) {
+        if(randomAccess(0, 2) == 0) {
           lastName = femaleStr;
         }else {
           lastName = maleStr;
@@ -51,16 +51,17 @@ exports.nameGenerator = async function ({ nameNum = 5, nameLength = 2, language 
       if(sex === 0) {
         firstName = femaleEnStr;
       }
-      else if(sex ===1) 
+      else if(sex === 1) 
       {
         firstName = maleEnStr;
       }else{
-        if(randomAccess(0, 2) ==0) {
+        if(randomAccess(0, 2) == 0) {
           firstName = femaleEnStr;
         }else {
           firstName = maleEnStr;
         }
       }
+      // 如果这里是英文名字就只能在姓名库取一个
       nameLength = 1;
     }
 
@@ -71,7 +72,7 @@ exports.nameGenerator = async function ({ nameNum = 5, nameLength = 2, language 
   return nameArr;
 };
 
-exports.nickNameGenerator = async function ({ nameNum = 5, nameLength = 3 }) {
+exports.nickNameGenerator = async function ({ nameNum = 1, nameLength = 3 }) {
   let nameArr = [];
   for (let i = 0; i < nameNum; i++) {
     let name = ""

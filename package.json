@@ -1,7 +1,7 @@
 {
-  "name": "nodex-0",
-  "version": "1.0.0",
-  "description": "nodex-0 base on nodex-libs",
+  "name": "name-generator",
+  "version": "2.0.0",
+  "description": "name-generator",
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=dev nodemon --exec 'nodex start'",
