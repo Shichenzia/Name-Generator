@@ -13,7 +13,11 @@ exports.init = async function (args) {
 
   app.route(router => {
     router.get('/', http.handler(logic.helloWorld));
+    // 随机生成姓名
+    router.get('/name_generator', http.handler(logic.nameGenerator));
     router.post('/name_generator', http.handler(logic.nameGenerator));
+    // 随机生成昵称
+    router.get('/nickname_generator', http.handler(logic.nickNameGenerator));
     router.post('/nickname_generator', http.handler(logic.nickNameGenerator));
     
   });
