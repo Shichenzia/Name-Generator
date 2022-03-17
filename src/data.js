@@ -11,7 +11,7 @@ exports.init = async function (args) {
   for (const index in args.file) {
     const fileName = path.join(process.cwd(), `data/name-libs/${args.file[index]}`);
     const nameLibObj = requireLogic(fileName, args.file[index]);
-    
+
     nameLibsStore = {
       ...nameLibsStore,
       ...nameLibObj
@@ -19,6 +19,12 @@ exports.init = async function (args) {
   }
 };
 
+/**
+ * 读取json文件，并解析数据
+ * @param {String} fileName 请求路径
+ * @param {String} file 文件名
+ * @returns 该主题的姓名库对象
+ */
 function requireLogic(fileName, file) {
   const nameSubjiectList = require(fileName);
   const subject = file.split('.')[0];
@@ -29,6 +35,11 @@ function requireLogic(fileName, file) {
   return nameLibObj;
 }
 
+/**
+ * 获取主题的姓名库
+ * @param {String} subject 主题名
+ * @returns 该主题对应的姓名库
+ */
 exports.getSubjectNameLibs = async function(subject){
   let subjectNameLibs = nameLibsStore[subject];
   return subjectNameLibs;
