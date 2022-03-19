@@ -1,22 +1,19 @@
 # Name-Generator
-Name Generator
+随机生成不同主题的姓名。
 
-# nodex-0
+采用本地json存贮姓名库，每次启动时读取所有的姓名库数据，并缓存在data数据层。
 
-A starter template for nodex service project.
+请求接口名称为 `/name_generator`,同时支持get，post请求方式。
 
-## install
+接口参数为 `subject`,可接受以下值：
 
-npm install
+| subject | 主题 |
+| ------- | ---- |
+| gufeng  | 古风 |
+| youxi   | 游戏 |
+| en      | 英文 |
+| zhenshi | 真实 |
+| wenyi   | 文艺 |
+| xianxia | 仙侠 |
 
-## run
-
-npm run start
-
-npm run dev
-npm run stage
-npm run prod
-
-npm run debug:dev
-npm run debug:stage
-npm run debug:prod
+![](./1.png)
