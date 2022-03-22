@@ -14,7 +14,6 @@ exports.init = async function (args) {
   app.route(router => {
     router.get('/', http.handler(logic.helloWorld));
     // 随机生成姓名
-    router.get('/name_generator', http.handler(logic.nameGenerator));
     router.post('/name_generator', http.handler(logic.nameGenerator));
   });
 

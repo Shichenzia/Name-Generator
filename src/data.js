@@ -8,9 +8,9 @@ exports.init = async function (args) {
   console.log("data init.");
   console.log("data init args:", args);
 
-  for (const index in args.file) {
-    const fileName = path.join(process.cwd(), `data/name-libs/${args.file[index]}`);
-    const nameLibObj = requireLogic(fileName, args.file[index]);
+  for (const index in args.files) {
+    const fileName = path.join(process.cwd(), `data/name-libs/${args.files[index]}`);
+    const nameLibObj = requireLogic(fileName, args.files[index]);
 
     nameLibsStore = {
       ...nameLibsStore,

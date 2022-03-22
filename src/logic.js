@@ -6,7 +6,6 @@ const { data } = runtime;
 exports.init = async function (args) {
   console.log("logic init.");
   console.log("logic init args:", args);
-
 };
 
 exports.helloWorld = async function () {
@@ -21,7 +20,7 @@ exports.nameGenerator = async function ({ subject }) {
 };
 
 // 获取指定范围内的随机数 [min, max)
-function randomAccess(min, max) {
+function randomRange(min, max) {
   return Math.floor(Math.random() * (min - max) + max);
 }
 
@@ -32,10 +31,10 @@ function randomAccess(min, max) {
  * @returns 姓名
  */
 function getRandomName(firstNameList, lastNameList) {
-  let name = firstNameList[randomAccess(0, firstNameList.length)];
+  let name = firstNameList[randomRange(0, firstNameList.length)];
 
   if(lastNameList.length > 0){
-    name = name + lastNameList[randomAccess(0, lastNameList.length)];
+    name = name + lastNameList[randomRange(0, lastNameList.length)];
   }
   return name;
 }
